@@ -23,39 +23,81 @@ Therefore, D flip-flop always Hold the information, which is available on data i
 
 image
 
-Next state of D flip-flop is always equal to data input, D for every positive transition of the clock signal. Hence, D flip-flops can be used in registers, shift registers and some of the counters.
+Next state of D flip-flop is always equal to data input, D for every positive transition of the clock signal. Hence, D flip-flops can be used in registers, shift registers and some of the counters. Procedure
 
-Procedure
+Define Module: Define a Verilog module for the D flip-flop with inputs (D, CLK) and outputs (Q).
 
-.Type the program in Quartus software.
+Declare Inputs and Outputs: Declare input and output ports for the module.
 
-2.Compile and run the program.
+Implement Flip-Flop Logic: Write Verilog code to implement the D flip-flop logic based on its functional table. Use a synchronous always @(posedge CLK) block to trigger the flip-flop on the positive edge of the clock signal.
 
-3.Generate the RTL schematic and save the logic diagram.
+Simulate Using Testbench: Write a Verilog testbench to simulate the behavior of the D flip-flop under different input conditions.
 
-4.Create nodes for inputs and outputs to generate the timing diagram.
+Apply Input Stimuli: In the testbench, apply various combinations of input stimuli (D, CLK) to cover all possible input states.
 
-5.For different input combinations generate the timing diagram.
+Verify Output Behavior: Verify that the output behavior of the D flip-flop matches the expected behavior defined by its functional table.
+
+Check for Race Conditions: Ensure that there are no race conditions or undefined states in the design by analyzing the timing and sequence of input changes.
 
 PROGRAM
 
-BY SRIRRAM B
-212223040203
-module D_FF(D,Clock,reset,Q);
-input D,Clock,reset;
+Program for flipflops and verify its truth table in quartus using Verilog programming.
+
+Developed by: B SRI RAM
+
+RegisterNumber: 212223040203
+
+module Exp8(D,clock,reset,Q);
+input D,clock,reset;
 output reg Q;
-always@(negedge Clock)//use negative edge clock for triggering condition
+always @(negedge clock)
 if(!reset)
-Q<=0;
+	Q <= 0;
 else
-Q<=D;
+	Q <= D;
 endmodule
-RTL LOGIC FOR FLIPFLOPS de4
+RTL LOGIC FOR FLIPFLOPS
+
+Screenshot 2024-04-16 144104
 
 TIMING DIGRAMS FOR FLIP FLOPS
 
-de5
+Screenshot 2024-04-16 144146
 
 RESULTS
 
-Thus the program to implement a D flipflop using verilog and validating their functionality using their functional tables.
+Thus the program to implement a D flipflop using verilog and validating their functionality using their functional tables
+
+About
+No description, website, or topics provided.
+Resources
+ Readme
+License
+ GPL-3.0 license
+ Activity
+Stars
+ 0 stars
+Watchers
+ 0 watching
+Forks
+ 0 forks
+Report repository
+Releases
+No releases published
+Packages
+No packages published
+Languages
+VHDL
+49.0%
+ 
+Stata
+21.0%
+ 
+HTML
+18.7%
+ 
+Verilog
+9.6%
+ 
+Standard ML
+1.7%
